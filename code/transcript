@@ -1,0 +1,158 @@
+# Compile of DetectorBus.vhd was successful.
+vsim -gui -novopt work.tb_cortexm0
+# vsim -gui -novopt work.tb_cortexm0 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_cortexm0(tb)
+# Loading unisim.vcomponents
+# Loading work.cm0_dssystem(behavioral)
+# Refreshing C:/Users/ts20365/OneDrive - University of Bristol/Embedded Real Time Systems/Project/work.detectorbus(behavioral)
+# Loading work.detectorbus(behavioral)
+# Loading unisim.fdce(fdce_v)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.cortexm0_memory(cortexm0_memory_a)
+# Loading xilinxcorelib.blk_mem_gen_v7_1(behavioral)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0
+# Loading ieee.std_logic_textio(body)
+# Loading xilinxcorelib.blk_mem_gen_v7_1_mem_module(mem_module_behavioral)
+# ** Note:  Block Memory Generator CORE Generator module loading initial data...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# Loading xilinxcorelib.blk_mem_gen_v7_1_output_stage(output_stage_behavioral)
+# Loading xilinxcorelib.blk_mem_gen_v7_1_softecc_output_reg_stage(softecc_output_reg_stage_behavioral)
+# Loading work.CORTEXM0DS
+# Loading work.cortexm0ds_logic
+add wave sim:/tb_cortexm0/*
+# Load canceled
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+add wave -position insertpoint  \
+sim:/tb_cortexm0/DUT/HRData
+restart
+# ** Note:  Block Memory Generator CORE Generator module loading initial data...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+add wave  \
+sim:/tb_cortexm0/clk
+add wave  \
+sim:/tb_cortexm0/led3
+add wave  \
+sim:/tb_cortexm0/reset
+# Causality operation skipped due to absense of debug database file
+add wave sim:/tb_cortexm0/DUT/*
+restart
+# ** Note:  Block Memory Generator CORE Generator module loading initial data...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+add wave  \
+sim:/tb_cortexm0/DUT/HRData
+quit -sim
+vsim -gui -novopt work.tb_cortexm0
+# vsim -gui -novopt work.tb_cortexm0 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_cortexm0(tb)
+# Loading unisim.vcomponents
+# Loading work.cm0_dssystem(behavioral)
+# Loading work.detectorbus(behavioral)
+# Loading unisim.fdce(fdce_v)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.cortexm0_memory(cortexm0_memory_a)
+# Loading xilinxcorelib.blk_mem_gen_v7_1(behavioral)
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0
+# Loading ieee.std_logic_textio(body)
+# Loading xilinxcorelib.blk_mem_gen_v7_1_mem_module(mem_module_behavioral)
+# ** Note:  Block Memory Generator CORE Generator module loading initial data...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# Loading xilinxcorelib.blk_mem_gen_v7_1_output_stage(output_stage_behavioral)
+# Loading xilinxcorelib.blk_mem_gen_v7_1_softecc_output_reg_stage(softecc_output_reg_stage_behavioral)
+# Loading work.CORTEXM0DS
+# Loading work.cortexm0ds_logic
+add wave -position insertpoint  \
+sim:/tb_cortexm0/reset
+add wave -position insertpoint  \
+sim:/tb_cortexm0/clk
+add wave -position insertpoint  \
+sim:/tb_cortexm0/led3
+add wave -position insertpoint  \
+sim:/tb_cortexm0/DUT/HWData
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+add wave -position insertpoint  \
+sim:/tb_cortexm0/DUT/HRData
+restart
+# ** Note:  Block Memory Generator CORE Generator module loading initial data...
+#    Time: 0 ns  Iteration: 0  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 2  Instance: /tb_cortexm0/DUT/Inst_Memory/U0/native_mem_module/mem_module
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
