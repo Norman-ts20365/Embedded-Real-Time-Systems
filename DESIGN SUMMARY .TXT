@@ -1,0 +1,373 @@
+
+CORTEXM0DS Project Status
+Project File:
+ERTSImplementation.xise
+Parser Errors:
+No Errors 
+Module Name:
+CORTEXM0DS
+Implementation State:
+Placed and Routed
+Target Device:
+xc6slx150t-2fgg900
+Errors:
+No Errors
+Product Version:
+ISE 14.1
+Warnings:
+22 Warnings (22 new)
+Design Goal:
+Balanced
+Routing Results:
+All Signals Completely Routed
+Design Strategy:
+Xilinx Default (unlocked)
+Timing Constraints:
+All Constraints Met
+Environment:
+System Settings 
+Final Timing Score:
+0  (Timing Report)
+ 
+
+Device Utilization Summary
+[-]
+Slice Logic Utilization
+Used
+Available
+Utilization
+Note(s)
+Number of Slice Registers
+843
+184,304
+1%
+ 
+    Number used as Flip Flops
+842
+ 
+ 
+ 
+    Number used as Latches
+0
+ 
+ 
+ 
+    Number used as Latch-thrus
+0
+ 
+ 
+ 
+    Number used as AND/OR logics
+1
+ 
+ 
+ 
+Number of Slice LUTs
+3,131
+92,152
+3%
+ 
+    Number used as logic
+3,126
+92,152
+3%
+ 
+        Number using O6 output only
+2,744
+ 
+ 
+ 
+        Number using O5 output only
+89
+ 
+ 
+ 
+        Number using O5 and O6
+293
+ 
+ 
+ 
+        Number used as ROM
+0
+ 
+ 
+ 
+    Number used as Memory
+0
+21,680
+0%
+ 
+    Number used exclusively as route-thrus
+5
+ 
+ 
+ 
+        Number with same-slice register load
+2
+ 
+ 
+ 
+        Number with same-slice carry load
+3
+ 
+ 
+ 
+        Number with other load
+0
+ 
+ 
+ 
+Number of occupied Slices
+1,267
+23,038
+5%
+ 
+Nummber of MUXCYs used
+156
+46,076
+1%
+ 
+Number of LUT Flip Flop pairs used
+3,363
+ 
+ 
+ 
+    Number with an unused Flip Flop
+2,524
+3,363
+75%
+ 
+    Number with an unused LUT
+232
+3,363
+6%
+ 
+    Number of fully used LUT-FF pairs
+607
+3,363
+18%
+ 
+    Number of unique control sets
+38
+ 
+ 
+ 
+    Number of slice register sites lost
+        to control set restrictions
+94
+184,304
+1%
+ 
+Number of bonded IOBs
+136
+540
+25%
+ 
+Number of RAMB16BWERs
+0
+268
+0%
+ 
+Number of RAMB8BWERs
+0
+536
+0%
+ 
+Number of BUFIO2/BUFIO2_2CLKs
+0
+32
+0%
+ 
+Number of BUFIO2FB/BUFIO2FB_2CLKs
+0
+32
+0%
+ 
+Number of BUFG/BUFGMUXs
+1
+16
+6%
+ 
+    Number used as BUFGs
+1
+ 
+ 
+ 
+    Number used as BUFGMUX
+0
+ 
+ 
+ 
+Number of DCM/DCM_CLKGENs
+0
+12
+0%
+ 
+Number of ILOGIC2/ISERDES2s
+0
+586
+0%
+ 
+Number of IODELAY2/IODRP2/IODRP2_MCBs
+0
+586
+0%
+ 
+Number of OLOGIC2/OSERDES2s
+0
+586
+0%
+ 
+Number of BSCANs
+0
+4
+0%
+ 
+Number of BUFHs
+0
+384
+0%
+ 
+Number of BUFPLLs
+0
+8
+0%
+ 
+Number of BUFPLL_MCBs
+0
+4
+0%
+ 
+Number of DSP48A1s
+0
+180
+0%
+ 
+Number of GTPA1_DUALs
+0
+4
+0%
+ 
+Number of ICAPs
+0
+1
+0%
+ 
+Number of MCBs
+0
+4
+0%
+ 
+Number of PCIE_A1s
+0
+1
+0%
+ 
+Number of PCILOGICSEs
+0
+2
+0%
+ 
+Number of PLL_ADVs
+0
+6
+0%
+ 
+Number of PMVs
+0
+1
+0%
+ 
+Number of STARTUPs
+0
+1
+0%
+ 
+Number of SUSPEND_SYNCs
+0
+1
+0%
+ 
+Average Fanout of Non-Clock Nets
+4.72
+ 
+ 
+ 
+ 
+
+Performance Summary
+[-]
+Final Timing Score:
+0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+Pinout Data:
+Pinout Report
+Routing Results:
+All Signals Completely Routed
+Clock Data:
+Clock Report
+Timing Constraints:
+All Constraints Met
+ 
+ 
+ 
+
+Detailed Reports
+[-]
+Report Name
+Status
+Generated
+Errors
+Warnings
+Infos
+Synthesis Report
+Current
+Mon 10. Oct 11:35:18 2022
+0
+22 Warnings (22 new)
+22 Infos (22 new)
+Translation Report
+Current
+Mon 10. Oct 11:36:27 2022
+0
+0
+0
+Map Report
+Current
+Mon 10. Oct 11:37:19 2022
+0
+0
+6 Infos (6 new)
+Place and Route Report
+Current
+Mon 10. Oct 11:37:51 2022
+0
+0
+0
+Power Report
+ 
+ 
+ 
+ 
+ 
+Post-PAR Static Timing Report
+Current
+Mon 10. Oct 11:38:04 2022
+0
+0
+3 Infos (3 new)
+Bitgen Report
+ 
+ 
+ 
+ 
+ 
+ 
+
+Secondary Reports
+[-]
+Report Name
+Status
+Generated
+
+
+Date Generated: 10/19/2022 - 11:06:41
