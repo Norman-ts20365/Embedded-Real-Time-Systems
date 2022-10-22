@@ -30,7 +30,26 @@ entity AHB_bridge is
 end;
 architecture structural of AHB_bridge is
 --declare a component for state_machine
+ component STATE_MACHINE is
+   port(
+      -- Clock and Reset -----------------
+    clkm : in std_logic;
+    rstn : in std_logic;
  
+     -- AHBLITE Master records --------------
+    dmai : out ahb_dma_in_type;
+    dmao : in ahb_dma_out_type;
+ 
+    -- AHBBridge to StateMachine ----------------------------
+    HADDR  : IN std_logic_vector (31 downto 0);   -- AHBLITE transaction address
+    HSIZE  : IN std_logic_vector (2 downto 0);    -- AHBLITE size: byte, half-word or word
+    HTRANS : IN std_logic_vector (1 downto 0);   -- AHBLITE transfer: non-sequential only
+    HWDATA : IN std_logic_vector (31 downto 0);  -- AHBLITE write-data
+    HWRITE : IN std_logic;                       -- AHBLITE write control
+    HREADY : OUT std_logic                      -- AHBLITE stall signal
+ );
+   end component; 
+     
 --declare a component for ahbmst 
  component ahbmst is 
   generic (
@@ -50,18 +69,21 @@ architecture structural of AHB_bridge is
       ahbo : out ahb_mst_out_type 
       );
   end component; 
+ 
 --declare a component for data_swapper 
   component data_swapper is
    port(
      dmao:in  ahb_dma_out_type;
      HRDATA:out std_logic_vector (31 downto 0)); 
    end component; 
- 
+  
+
 signal dmai : ahb_dma_in_type;
 signal dmao : ahb_dma_out_type;
 begin
  
 --instantiate state_machine component and make the connections
+ state_machine_comp : STATE_MACHINE port map(clkm,rstn,dmai,dmao,HADDR,HSIZE,HTRANS,HWDATA,HWRITE,HREADY);
 --instantiate the ahbmst component and make the connections 
   
  ahbmst_comp: ahbmst port map(rstn,clkm,dmai,dmao,ahbmi,ahbmo);
@@ -71,3 +93,4 @@ begin
  data_swapper_comp: data_swapper port map(dmao,HRDATA);
 
 end structural;
+
