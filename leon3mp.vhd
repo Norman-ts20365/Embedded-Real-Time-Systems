@@ -127,6 +127,18 @@ entity leon3mp is
 end;
 
 architecture rtl of leon3mp is
+  ----------------------Component of the cm0_wrapper-------------
+  Component cm0_wrapper is 
+    PORT(
+    -- Clock and Reset -----------------
+ clkm : in std_logic;
+ rstn : in std_logic;
+ -- AHB Master records --------------
+ ahbmi : in ahb_mst_in_type;
+ ahbmo : out ahb_mst_out_type
+ );
+END Component;
+ 
   signal vcc : std_logic;
   signal gnd : std_logic;
 
