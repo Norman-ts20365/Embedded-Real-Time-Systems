@@ -127,18 +127,17 @@ entity leon3mp is
 end;
 
 architecture rtl of leon3mp is
-  ----------------------Component of the cm0_wrapper-------------
   Component cm0_wrapper is 
     PORT(
     -- Clock and Reset -----------------
- clkm : in std_logic;
- rstn : in std_logic;
+    clkm : in std_logic;
+    rstn : in std_logic;
  -- AHB Master records --------------
- ahbmi : in ahb_mst_in_type;
- ahbmo : out ahb_mst_out_type
- );
-END Component;
- 
+    ahbmi : in ahb_mst_in_type;
+    ahbmo : out ahb_mst_out_type
+    );
+  END Component;
+  
   signal vcc : std_logic;
   signal gnd : std_logic;
 
@@ -256,15 +255,17 @@ begin
                  nahbs => 8)
     port map (rstn, clkm, ahbmi, ahbmo, ahbsi, ahbso);
 
+
 ----------------------------------------------------------------------
 --- ARM Cortex-M0 Processor -----------------------------------------
 ----------------------------------------------------------------------
 --Cortex-M0 processor 
- cm0gen : if CFG_CM0 = 1 generate
+  cm0gen : if CFG_CM0 = 1 generate
  -- instance of your wrapper with correct port mapping that then creates instances of the M0 processor and bridge 
- u1 : cm0_wrapper
- port map (clkm,rstn,ahbmi,ahbmo(0));
- end generate;
+    u1 : cm0_wrapper
+      port map (clkm,rstn,ahbmi,ahbmo(0));
+  end generate;
+
 
 ----------------------------------------------------------------------
 ---  LEON3 processor and DSU -----------------------------------------
