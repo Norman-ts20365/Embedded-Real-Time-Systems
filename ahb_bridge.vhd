@@ -10,86 +10,87 @@ use gaisler.misc.all;
 library UNISIM;
 use UNISIM.VComponents.all;
 
-ENTITY STATE_MACHINE IS
-  PORT(
-  -- Clock and Reset -----------------
+entity AHB_bridge is
+ port(
+ -- Clock and Reset -----------------
  clkm : in std_logic;
  rstn : in std_logic;
- 
-  -- AHBLITE Master records --------------
- dmai : out ahb_dma_in_type;
- dmao : in ahb_dma_out_type;
- 
-  -- AHBBridge to StateMachine ----------------------------
- HADDR  : IN std_logic_vector (31 downto 0);   -- AHBLITE transaction address
- HSIZE  : IN std_logic_vector (2 downto 0);    -- AHBLITE size: byte, half-word or word
- HTRANS : IN std_logic_vector (1 downto 0);   -- AHBLITE transfer: non-sequential only
- HWDATA : IN std_logic_vector (31 downto 0);  -- AHBLITE write-data
- HWRITE : IN std_logic;                       -- AHBLITE write control
- HREADY : OUT std_logic                      -- AHBLITE stall signal
+ -- AHB Master records --------------
+ ahbmi : in ahb_mst_in_type;
+ ahbmo : out ahb_mst_out_type;
+ -- ARM Cortex-M0 AHB-Lite signals -- 
+ HADDR : in std_logic_vector (31 downto 0); -- AHB transaction address
+ HSIZE : in std_logic_vector (2 downto 0); -- AHB size: byte, half-word or word
+ HTRANS : in std_logic_vector (1 downto 0); -- AHB transfer: non-sequential only
+ HWDATA : in std_logic_vector (31 downto 0); -- AHB write-data
+ HWRITE : in std_logic; -- AHB write control
+ HRDATA : out std_logic_vector (31 downto 0); -- AHB read-data
+ HREADY : out std_logic -- AHB stall signal
  );
-END STATE_MACHINE;
-
-
-
-ARCHITECTURE structural of STATE_MACHINE is
-  
-  TYPE state_type IS (IDLE,INSTR_FETCH);
-    SIGNAL curState, nextState: state_type;
-    
-    BEGIN
+end;
+architecture structural of AHB_bridge is
+--declare a component for state_machine
+ component STATE_MACHINE is
+   port(
+      -- Clock and Reset -----------------
+    clkm : in std_logic;
+    rstn : in std_logic;
  
-    --------- Next State Logic -----------------------------
-    next_state_logic: PROCESS(curState,dmao,HTRANS)
-      BEGIN
-        CASE curState IS
-          WHEN IDLE =>
-            IF HTRANS = "10" THEN
-              dmai.start <= '1';
-              nextState <= INSTR_FETCH;
-              
-            ELSE
-              nextState <= curState;
-            END IF;
-            
-          WHEN INSTR_FETCH =>
-            IF dmao.ready = '1' THEN
-              HREADY <= '1';
-              nextState <= IDLE;
-              
-            ELSE
-              nextState <= curState;
-            END IF;
-          END CASE;
-        END PROCESS; -- Next state logic
-        
-      ------- State Register -----------------------------------------
-      state_register: PROCESS(clkm,rstn)
-        BEGIN
-          IF rstn = '1' THEN
-            curState <= INSTR_FETCH;
-          ELSIF clkm'event AND clkm = '1' THEN
-            curState <= nextState;
-          END IF;
-        END PROCESS; -- Next state clock
-      
-      
-      ------- Output State Logic ------------------------------
-      out_state: PROCESS(curState)
-      BEGIN
-        IF curState = IDLE THEN
-          HREADY <= '1';
-          dmai.start <= '0';
-        ELSE
-           HREADY <= '0';
-          dmai.start <= '0';
-        END IF;
-      END PROCESS; -- Output STate Logic
-          
-      
-      
-      
-      END;
-    
-    
+     -- AHBLITE Master records --------------
+    dmai : out ahb_dma_in_type;
+    dmao : in ahb_dma_out_type;
+ 
+    -- AHBBridge to StateMachine ----------------------------
+    HADDR  : IN std_logic_vector (31 downto 0);   -- AHBLITE transaction address
+    HSIZE  : IN std_logic_vector (2 downto 0);    -- AHBLITE size: byte, half-word or word
+    HTRANS : IN std_logic_vector (1 downto 0);   -- AHBLITE transfer: non-sequential only
+    HWDATA : IN std_logic_vector (31 downto 0);  -- AHBLITE write-data
+    HWRITE : IN std_logic;                       -- AHBLITE write control
+    HREADY : OUT std_logic                      -- AHBLITE stall signal
+ );
+   end component; 
+     
+--declare a component for ahbmst 
+ component ahbmst is 
+  generic (
+    hindex  : integer := 0;
+    hirq    : integer := 0;
+    venid   : integer := VENDOR_GAISLER;
+    devid   : integer := 0;
+    version : integer := 0;
+    chprot  : integer := 3;
+    incaddr : integer := 0); 
+  port (
+      rst  : in  std_ulogic;
+      clk  : in  std_ulogic;
+      dmai : in ahb_dma_in_type;
+      dmao : out ahb_dma_out_type;
+      ahbi : in  ahb_mst_in_type;
+      ahbo : out ahb_mst_out_type 
+      );
+  end component; 
+ 
+--declare a component for data_swapper 
+  component data_swapper is
+   port(
+     dmao:in  ahb_dma_out_type;
+     HRDATA:out std_logic_vector (31 downto 0)); 
+   end component; 
+  
+
+signal dmai : ahb_dma_in_type;
+signal dmao : ahb_dma_out_type;
+begin
+ 
+--instantiate state_machine component and make the connections
+ state_machine_comp : STATE_MACHINE port map(clkm,rstn,dmai,dmao,HADDR,HSIZE,HTRANS,HWDATA,HWRITE,HREADY);
+--instantiate the ahbmst component and make the connections 
+  
+ ahbmst_comp: ahbmst port map(rstn,clkm,dmai,dmao,ahbmi,ahbmo);
+   
+--instantiate the data_swapper component and make the connections
+
+ data_swapper_comp: data_swapper port map(dmao,HRDATA);
+
+end structural;
 
