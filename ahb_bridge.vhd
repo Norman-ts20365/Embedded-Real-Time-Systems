@@ -74,12 +74,13 @@ architecture structural of AHB_bridge is
   component data_swapper is
    port(
      dmao:in  ahb_dma_out_type;
-     HRDATA:out std_logic_vector (31 downto 0)); 
+     HRDATA:out std_logic_vector (31 downto 0))
    end component; 
   
 
 signal dmai : ahb_dma_in_type;
 signal dmao : ahb_dma_out_type;
+
 begin
  
 --instantiate state_machine component and make the connections
