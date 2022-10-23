@@ -99,8 +99,8 @@ ARCHITECTURE structural of cm0_wrapper is
 	  port (
 		   clkm: in std_logic;
 		   rstn: in std_logic;
-		   ahbi: in ahb_mst_in_type;
-       ahbo : out ahb_mst_out_type;
+		   ahbmi: in ahb_mst_in_type;
+       ahbmo : out ahb_mst_out_type;
 		   HADDR : in std_logic_vector (31 downto 0); -- AHB transaction address
        HSIZE : in std_logic_vector (2 downto 0); -- AHB size: byte, half-word or word
        HTRANS : in std_logic_vector (1 downto 0); -- AHB transfer: non-sequential only
