@@ -34,18 +34,22 @@ END STATE_MACHINE;
 
 ARCHITECTURE structural of STATE_MACHINE is
   
+  SIGNAL reg_dmai_start : std_logic;
+  
   TYPE state_type IS (IDLE,INSTR_FETCH);
     SIGNAL curState, nextState: state_type;
     
     BEGIN
- 
+    
+    dmai.start <= reg_dmai_start;
+    
     --------- Next State Logic -----------------------------
     next_state_logic: PROCESS(curState,dmao,HTRANS)
       BEGIN
         CASE curState IS
           WHEN IDLE =>
             IF HTRANS = "10" THEN
-              dmai.start <= '1';
+              reg_dmai_start <= '1';
               nextState <= INSTR_FETCH;
               
             ELSE
@@ -79,10 +83,10 @@ ARCHITECTURE structural of STATE_MACHINE is
       BEGIN
         IF curState = IDLE THEN
           HREADY <= '1';
-          dmai.start <= '0';
+          reg_dmai_start <= '0';
         ELSE
            HREADY <= '0';
-          dmai.start <= '0';
+          reg_dmai_start <= '0';
         END IF;
       END PROCESS; -- Output STate Logic
           
@@ -90,6 +94,3 @@ ARCHITECTURE structural of STATE_MACHINE is
       
       
       END;
-    
-    
-
