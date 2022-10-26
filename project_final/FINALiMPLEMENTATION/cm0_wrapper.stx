@@ -1,0 +1,96 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/ye20178/OneDrive - University of Bristol/Documents/Downloads/New folder/FINALiMPLEMENTATION/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.37 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/ye20178/OneDrive - University of Bristol/Documents/Downloads/New folder/FINALiMPLEMENTATION/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> Reading design: cm0_wrapper.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\code\cortexm0ds_logic.v" into library work
+Parsing module <cortexm0ds_logic>.
+Analyzing Verilog file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\code\CORTEXM0DS.v" into library work
+Parsing module <CORTEXM0DS>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\grlib\stdlib\version.vhd" into library grlib
+Parsing package <version>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\grlib\stdlib\stdlib.vhd" into library grlib
+Parsing package <stdlib>.
+Parsing package body <stdlib>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\grlib\stdlib\config.vhd" into library grlib
+Parsing package <config>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\grlib\amba\amba.vhd" into library grlib
+Parsing package <amba>.
+Parsing package body <amba>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\techmap\gencomp\gencomp.vhd" into library techmap
+Parsing package <gencomp>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\grlib\amba\devices.vhd" into library grlib
+Parsing package <devices>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\gaisler\misc\misc.vhd" into library gaisler
+Parsing package <misc>.
+Parsing package body <misc>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\grlib-gpl-1.1.0-b4108(1)\grlib-gpl-1.1.0-b4108\lib\gaisler\misc\ahbmst.vhd" into library work
+Parsing entity <ahbmst>.
+Parsing architecture <rtl> of entity <ahbmst>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\state_machine.vhd" into library work
+Parsing entity <STATE_MACHINE>.
+Parsing architecture <structural> of entity <state_machine>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\DetectorBus.vhd" into library work
+Parsing entity <DetectorBus>.
+Parsing architecture <Behavioral> of entity <detectorbus>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\data_swapper.vhd" into library work
+Parsing entity <data_swapper>.
+Parsing architecture <data_swapper_arch> of entity <data_swapper>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\Led_Blink.vhd" into library work
+Parsing entity <led_blink>.
+Parsing architecture <behavioural> of entity <led_blink>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\AHBBridge.vhd" into library work
+Parsing entity <AHB_bridge>.
+Parsing architecture <structural> of entity <ahb_bridge>.
+Parsing VHDL file "C:\Users\ye20178\OneDrive - University of Bristol\Documents\Downloads\Embedded-Real-Time-Systems-main (1)\Embedded-Real-Time-Systems-main\project_final\cm0_wrapper.vhd" into library work
+Parsing entity <cm0_wrapper>.
+Parsing architecture <structural> of entity <cm0_wrapper>.
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.56 secs
+ 
+--> 
+
+Total memory usage is 4476664 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
